@@ -32,7 +32,12 @@ function start() {
     // Change HTML to reflect the conditions of the round
     document.getElementById("wordToGuess").innerHTML = blanksAndSuccess.join("  ");
     document.getElementById("guessLeft").innerHTML = guessesRemain;
+    document.getElementById("win").innerHTML = winCount;
+    document.getElementById("losses").innerHTML = lossCount;
 
 }
-// Main logic process
+// Main Logic Process
+
+// Initiates code for the first time
 start();
+
