@@ -14,6 +14,8 @@ var lossCount = 0;
 var guessesRemain = 9;
 
 // Functions to be called upon when needed
+
+//Begins game
 function start() {
     computerPick = wordList[Math.floor(Math.random() * wordList.length)];
     wordsLetters = computerPick.split("");
@@ -36,8 +38,25 @@ function start() {
     document.getElementById("losses").innerHTML = lossCount;
 
 }
-// Main Logic Process
+//Compares letter guessed to letters in pick
+function compareLetters(letter) {
+    var isLetterInWord = false;
+
+    for (var i=0; i<numBlanks; i++){
+        if(computerPick[i] == letter) {
+            isLetterInWord = true;
+        }
+    }
+}
+
+// Main Process
 
 // Initiates code for the first time
 start();
 
+// registers the users key presses
+document.onkeyup = function(event) {
+    var letterPicked = String.fromCharCode(event.keyCode).toLowerCase();
+    checkLetters(letterPicked);
+
+}
