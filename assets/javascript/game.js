@@ -1,7 +1,7 @@
 // Variables and Arrays
 
 
-var wordList = ["", "", "", "", "",];
+var wordList = ["mulan", "", "baxter", "zach", "kiya"];
 var computerPick = "";
 var wordsLetters = [];
 var numBlanks = 0;
@@ -19,7 +19,9 @@ var guessesRemain = 9;
 function start() {
     computerPick = wordList[Math.floor(Math.random() * wordList.length)];
     wordsLetters = computerPick.split("");
-    numBlanks = wordsLetters.lenght;
+    numBlanks = wordsLetters.length;
+
+    
 
     //Resets
     guessesRemain = 9;
@@ -34,8 +36,15 @@ function start() {
     // Change HTML to reflect the conditions of the round
     document.getElementById("wordToGuess").innerHTML = blanksAndSuccess.join("  ");
     document.getElementById("guessLeft").innerHTML = guessesRemain;
-    document.getElementById("win").innerHTML = winCount;
+    document.getElementById("wins").innerHTML = winCount;
     document.getElementById("losses").innerHTML = lossCount;
+
+    //Testing/Debugging
+    console.log(computerPick);
+    console.log(wordsLetters);
+    console.log(numBlanks);
+    console.log(blanksAndSuccess);
+
 
 }
 //Compares letter guessed to letters in pick
@@ -102,7 +111,7 @@ function roundFinish(){
     // registers the users key presses
     document.onkeyup = function (event) {
         var letterPicked = String.fromCharCode(event.keyCode).toLowerCase();
-        checkLetters(letterPicked);
+        compareLetters(letterPicked);
         roundFinish();
 
     }
