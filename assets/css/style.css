@@ -1,0 +1,11 @@
+.jumbotron {
+
+}
+body {
+    background-image: url("/assets/disney.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.card, .card-body {
+    opacity: .7
+}

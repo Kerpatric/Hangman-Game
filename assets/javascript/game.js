@@ -1,7 +1,7 @@
 // Variables and Arrays
 
 
-var wordList = ["mulan", "", "baxter", "zach", "kiya"];
+var wordList = ["mulan", "aladin", "simba", "ariel", "belle"];
 var computerPick = "";
 var wordsLetters = [];
 var numBlanks = 0;
